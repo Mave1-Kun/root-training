@@ -96,8 +96,8 @@ python3 invariant_mass.py
 
 | 脚本 | 输出文件 | 含义 |
 |------|----------|------|
-| histogram_fit.py | gaussian_fit.root | 直方图和拟合函数 |
-| histogram_fit.py | gaussian_fit.png | 拟合结果图 |
+| test.py | hist.png | 直方图 |
+| gauss.py | hist_fit.png | 拟合结果图 |
 | ttree_write.py | tree_write.root | 含 10000 个事件的 TTree |
 | ttree_read.py | （终端输出） | 读取验证 |
 | invariant_mass.py | events.root | 模拟的 J/ψ → μμ 事件 |
@@ -114,12 +114,13 @@ root-training/
 ├── .gitignore
 ├── requirements.txt
 ├── scripts/
-│   ├── histogram_fit.py         # 直方图 + 高斯拟合
+│   ├── test.py		 # 直方图
+│   ├── gauss.py         # 高斯拟合
 │   ├── ttree_write.py           # 写入 TTree
 │   ├── ttree_read.py            # 读取 TTree
 │   └── invariant_mass.py        # 不变质量重建
 ├── figures/
-│   ├── gaussian_fit.png
+│   ├── hist_fit.png
 │   └── invariant_mass.png
 └── report/
     └── 学习报告.pdf
