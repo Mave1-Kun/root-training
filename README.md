@@ -79,7 +79,8 @@ source /HEP/root/bin/thisroot.sh
 cd scripts
 
 # 3. 直方图 + 高斯拟合
-python3 histogram_fit.py
+python3 test.py
+python3 gauss.py
 
 # 4. TTree 写入与读取
 python3 ttree_write.py
