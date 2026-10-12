@@ -1,0 +1,11 @@
+import ROOT
+import numpy as np
+
+h = ROOT.TH1D("h", "test", 100, -5, 5)
+h.FillRandom("gaus", 5000)
+
+c = ROOT.TCanvas()
+h.Draw()
+c.Draw()
+c.SaveAs("hist.png")
+input("按回车退出...")
