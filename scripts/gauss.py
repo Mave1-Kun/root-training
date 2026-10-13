@@ -1,6 +1,9 @@
 import ROOT
 import numpy as np
-
+import os
+script_dir = os.path.dirname(os.path.abspath(__file__))
+fig_dir = os.path.join(script_dir, "..", "figures")
+os.makedirs(fig_dir, exist_ok=True)
 # 1. 建直方图并填充随机数据
 h = ROOT.TH1D("h", "Gaussian Distribution;x;Counts", 100, -5, 5)
 h.FillRandom("gaus", 5000)
@@ -25,6 +28,7 @@ func.SetLineWidth(2)
 func.Draw("same")
 
 # 5. 保存图片
-c.SaveAs("hist_fit.png")
-
+out_path = os.path.join(fig_dir, "hist_fit.png")
+c.SaveAs(out_path)
+print(f"Saved: {out_path}")
 input("按回车退出...")

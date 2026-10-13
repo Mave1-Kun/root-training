@@ -1,5 +1,11 @@
 import ROOT
 import numpy as np
+import os
+
+# 输出目录
+script_dir = os.path.dirname(os.path.abspath(__file__))
+fig_dir = os.path.join(script_dir, "..", "figures")
+os.makedirs(fig_dir, exist_ok=True)
 
 ROOT.gRandom.SetSeed(42)
 
@@ -143,7 +149,8 @@ def reconstruct_invariant_mass(input_file, output_file):
         func.SetLineColor(ROOT.kRed)
         func.SetLineWidth(2)
         func.Draw("same")
-    c.SaveAs("invariant_mass.png")
+    out_path = os.path.join(fig_dir, "invariant_mass.png")
+    c.SaveAs(out_path)
     print("Saved: invariant_mass.png")
 
     f.Close()
